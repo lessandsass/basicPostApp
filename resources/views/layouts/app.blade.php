@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Basic Post App</title>
 </head>
+
 <body class="bg-gray-900">
 
     <nav class="bg-gray-800 p-6 text-gray-300 flex justify-between">
@@ -37,8 +38,6 @@
                     <a href="{{ route('register') }}">Register</a>
                 </li>
             @endauth
-
-
 
         </ul>
 

@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
-        if (auth()->guard()->check()) {
-            return redirect()->route('dashboard');
-        } else {
-            return view('auth.login');
-        }
-
+        return view('auth.login');
     }
 
     public function store(Request $request)

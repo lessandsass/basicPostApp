@@ -9,9 +9,14 @@
 
                 <div class="mb-4">
                     <label for="name" class="sr-only">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Your name"
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Your name"
                         class="bg-gray-800 border-2 border-gray-400 w-full p-4 focus- rounded-lg @error('name') border-red-500 @else border-slate-600 @enderror"
-                        value="{{ old('name') }}">
+                        value="{{ old('name') }}"
+                    >
                     @error('name')
                         <div class="text-red-500 mt-2 text-sm">
                             {{ $message }}
