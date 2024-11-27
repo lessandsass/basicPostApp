@@ -31,7 +31,10 @@
                     <a href="" class="p-3">{{ auth()->user()->name }}</a>
                 </li>
                 <li>
-                    <a href="">Logout</a>
+                    <form action="{{ route('logout') }}" method="post" class="inline">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
                 </li>
             @else
                 <li>

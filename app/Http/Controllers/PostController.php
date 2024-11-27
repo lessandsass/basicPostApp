@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -23,13 +24,13 @@ class PostController extends Controller
         $request->validate([
             'body' => 'required|min:2|max:50',
         ]);
-        dd('passed');
 
-        // $request->user()->posts()->create([
-        //     'body' => $request->body,
-        // ]);
+        $request->user()->posts()->create([
+            'body' => $request->body
+        ]);
 
-        // return back();
+        return back();
+
     }
 
 }
