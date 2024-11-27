@@ -58,7 +58,7 @@
                                 </a>
 
                                 <span class="text-gray-400 text-sm">
-                                    Date
+                                    {{ $post->created_at->diffForHumans() }}
                                 </span>
                             </div>
 
