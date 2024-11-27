@@ -47,7 +47,34 @@
             @endauth
 
             <div class="mt-3">
-                Posts Index
+
+                @if ($posts->count())
+
+                    @foreach ($posts as $post)
+                        <div class="mb-4">
+                            <div>
+                                <a href="#" class="text-green-500">
+                                    {{ $post->user->name }}
+                                </a>
+
+                                <span class="text-gray-400 text-sm">
+                                    Date
+                                </span>
+                            </div>
+
+                            <p class="mb-2">
+                                {{ $post->body }}
+                            </p>
+
+                        </div>
+                    @endforeach
+
+                @else
+                    <div class="mb-4">
+                        No posts yet
+                    </div>
+                @endif
+
             </div>
 
         </div>
