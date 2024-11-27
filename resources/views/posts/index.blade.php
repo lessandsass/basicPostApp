@@ -1,0 +1,60 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="text-gray-300 flex justify-center">
+        <div class="w-6/12 bg-gray-800 p-6 rounded-lg">
+
+    @guest
+                <div class="mb-4">
+                    Please login to create posts
+                </div>
+            @endguest
+
+            @auth
+
+                <form
+                    action="{{ route('posts') }}"
+                    method="post"
+                    class="mb-6"
+                >
+                @csrf
+
+                    <div class="mb-4">
+                        <label for="body" class="sr-only">Body</label>
+                        <textarea
+                            name="body"
+                            id="body"
+                            cols="30"
+                            rows="4"
+                            class="bg-gray-900 rounded-lg p-4 resize-none w-full border-2 focus:outline-none text-gray-400 @error('body') border-red-500 @else border-slate-600 @enderror"
+                            placeholder="Post something..."
+                        ></textarea>
+
+                        @error('body')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div>
+                        <button type="submit" class="bg-indigo-500 px-4 py-2 rounded-lg text-white">Post</button>
+                    </div>
+
+                </form>
+
+            @endauth
+
+            <div class="mt-3">
+                Posts Index
+            </div>
+
+        </div>
+    </div>
+@endsection
+
+
+
+
+

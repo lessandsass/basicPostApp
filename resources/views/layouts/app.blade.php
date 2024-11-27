@@ -14,10 +14,13 @@
 
         <ul class="flex items-center">
             <li>
-                <a href="{{ route('home') }}" class="p-3">Home</a>
+                <a href="{{ route('home') }}" class="p-1 m-2">Home</a>
             </li>
             <li>
-                <a href="{{ route('dashboard') }}">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="p-1 m-2">Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ route('posts') }}" class="p-1 m-2">Posts</a>
             </li>
         </ul>
 
