@@ -69,6 +69,8 @@
                         </div>
                     @endforeach
 
+                    {{ $posts->links() }}
+
                 @else
                     <div class="mb-4">
                         No posts yet
