@@ -66,13 +66,16 @@
                                 {{ $post->body }}
                             </p>
 
-                            @if (auth()->user()->ownsPost($post))
-                                <a href="" class="text-red-500">
+                            @if ($post->ownedBy(auth()->user()))
+                                <a
+                                    href="{{ route('posts.destroy', $post->id) }}"
+                                    class="text-red-500"
+                                >
                                     Delete
                                 </a>
                             @endif
 
-                            {{-- @if ($post->ownedBy(auth()->user()->id))
+                            {{-- @if ($post->ownedBy(auth()->user()))
                                 <form
                                     action="{{ route('posts.destroy', $post) }}"
                                     method="post"
