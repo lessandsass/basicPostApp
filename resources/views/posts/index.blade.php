@@ -66,18 +66,18 @@
                                 {{ $post->body }}
                             </p>
 
-                            @if ($post->ownedBy(auth()->user()))
+                            {{-- @if ($post->ownedBy(auth()->user()))
                                 <a
                                     href="{{ route('posts.destroy', $post->id) }}"
                                     class="text-red-500"
                                 >
                                     Delete
                                 </a>
-                            @endif
+                            @endif --}}
 
-                            {{-- @if ($post->ownedBy(auth()->user()))
+                            @if ($post->ownedBy(auth()->user()))
                                 <form
-                                    action="{{ route('posts.destroy', $post) }}"
+                                    action="{{ route('posts.destroy', $post->id) }}"
                                     method="post"
                                 >
                                     @csrf
@@ -89,7 +89,7 @@
                                         Delete
                                     </button>
                                 </form>
-                            @endif --}}
+                            @endif
 
                         </div>
                     @endforeach
