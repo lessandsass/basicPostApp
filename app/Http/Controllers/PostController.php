@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -38,7 +39,7 @@ class PostController extends Controller
     {
 
         if (!$post->ownedBy($request->user())) {
-            return response(null, 401);
+            throw new AuthorizationException('You do not own this post');
         }
 
         $post->delete();
