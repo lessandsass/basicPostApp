@@ -38,7 +38,7 @@ class PostController extends Controller
     {
 
         if (!$post->ownedBy($request->user())) {
-            return response(null, 402);
+            return response(null, 401);
         }
 
         $post->delete();
