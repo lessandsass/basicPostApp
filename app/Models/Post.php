@@ -13,11 +13,6 @@ class Post extends Model
         'body',
     ];
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'uuid';
-    // }
-
     public function ownedBy(User $user)
     {
         return $this->user_id === $user->id;

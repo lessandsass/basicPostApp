@@ -78,7 +78,7 @@
                                 </a>
                             @endif --}}
 
-                            @if ($post->ownedBy(auth()->user()))
+                            @can('delete', $post)
                                 <form
                                     action="{{ route('posts.destroy', $post->id) }}"
                                     method="post"
@@ -92,7 +92,7 @@
                                         Delete
                                     </button>
                                 </form>
-                            @endif
+                            @endcan
 
                         </div>
                     @endforeach
