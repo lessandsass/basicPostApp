@@ -6,6 +6,12 @@
 
             <div class="mt-3">
 
+                <h1
+                    class="text-indigo-500 text-xl my-4"
+                >
+                    {{ $user->name }}'s Posts {{ $posts->count() }}
+                </h1>
+
                 @if ($posts->count())
 
                     @foreach ($posts as $post)

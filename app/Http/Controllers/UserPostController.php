@@ -14,6 +14,7 @@ class UserPostController extends Controller
 
         return view('users.posts.index', [
             'posts' => $posts,
+            'user' => $user
         ]);
     }
 }
