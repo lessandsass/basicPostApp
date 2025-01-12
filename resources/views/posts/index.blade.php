@@ -53,9 +53,6 @@
                     @foreach ($posts as $post)
                         <div class="mb-4">
                             <div>
-
-                                {{ $post->id }}
-
                                 <a href="#" class="text-green-500">
                                     {{ $post->user->name }}
                                 </a>
