@@ -53,7 +53,10 @@
                     @foreach ($posts as $post)
                         <div class="mb-4">
                             <div>
-                                <a href="#" class="text-green-500">
+                                <a
+                                    href="{{ route('users.posts', $post->user) }}"
+                                    class="text-green-500"
+                                >
                                     {{ $post->user->name }}
                                 </a>
 

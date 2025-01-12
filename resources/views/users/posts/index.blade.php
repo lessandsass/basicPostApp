@@ -11,9 +11,9 @@
                     @foreach ($posts as $post)
                         <div class="mb-4">
                             <div>
-                                <a href="#" class="text-green-500">
+                                <span class="text-green-500">
                                     {{ $post->user->name }}
-                                </a>
+                                </span>
 
                                 <span class="text-gray-400 text-sm">
                                     {{ $post->created_at->diffForHumans() }}
@@ -52,7 +52,7 @@
                         </div>
                     @endforeach
 
-                    {{-- {{ $posts->links() }} --}}
+                    {{ $posts->links() }}
 
                 @else
                     <div class="mb-4">
