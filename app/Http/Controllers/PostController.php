@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class PostController extends Controller
 {
@@ -35,11 +36,10 @@ class PostController extends Controller
 
     }
 
-    public function destroy(Request $request, Post $post)
+    public function destroy(Post $post)
     {
-
-        if (!$post->ownedBy($request->user())) {
-            throw new AuthorizationException('You do not own this post');
+        if (! Gate::allows('delete', $post)) {
+            abort(403);
         }
 
         $post->delete();
